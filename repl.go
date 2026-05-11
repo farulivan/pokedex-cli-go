@@ -23,7 +23,7 @@ func startRepl(cfg *config) {
 
 		command, exist := getCommands()[commandName]
 		if !exist {
-			fmt.Println("unknown command")
+			fmt.Println("Unknown command. Type 'help' for a list of commands.")
 			continue
 		}
 
@@ -67,13 +67,18 @@ func getCommands() map[string]cliCommand {
 		},
 		"catch": {
 			name:        "catch <pokemon_name>",
-			description: "Catch Pokemon adds them to the user's Pokedex",
+			description: "Catch a Pokemon and add it to your Pokedex",
 			callback:    commandCatch,
 		},
 		"inspect": {
 			name:        "inspect <pokemon_name>",
-			description: "See details about a Pokemon that had been catched",
+			description: "Inspect a caught Pokemon's details",
 			callback:    commandInspect,
+		},
+		"pokedex": {
+			name:        "pokedex",
+			description: "List all Pokemon in your Pokedex",
+			callback:    commandPokedex,
 		},
 		"exit": {
 			name:        "exit",

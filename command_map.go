@@ -15,7 +15,7 @@ func commandMapF(cfg *config, args ...string) error {
 	cfg.prevLocationsURL = resp.Previous
 
 	if len(resp.Results) == 0 {
-		fmt.Println("no location area")
+		fmt.Println("No location areas found.")
 		return nil
 	}
 
@@ -40,7 +40,7 @@ func commandMapB(cfg *config, args ...string) error {
 	cfg.prevLocationsURL = resp.Previous
 
 	if len(resp.Results) == 0 {
-		fmt.Println("no location area")
+		fmt.Println("No location areas found.")
 		return nil
 	}
 
